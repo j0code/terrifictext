@@ -1,0 +1,32 @@
+import { type Font, type RawTextComponent, TextComponentStyle } from "./types.js";
+export declare abstract class TextComponent<T> implements RawTextComponent<T>, TextComponentStyle {
+    static fromYSON(raw: unknown): void;
+    abstract readonly type: string;
+    private _content;
+    private _style;
+    constructor(content: T, style?: TextComponentStyle);
+    get content(): T;
+    set content(content: T);
+    get style(): TextComponentStyle;
+    set style(style: TextComponentStyle);
+    get color(): number | undefined;
+    set color(color: number | undefined);
+    get font(): Font | undefined;
+    set font(font: Font | undefined);
+    get weight(): number | undefined;
+    set weight(weight: number | undefined);
+    get italic(): boolean | undefined;
+    set italic(italic: boolean | undefined);
+    get underlined(): boolean | undefined;
+    set underlined(underlined: boolean | undefined);
+    get strike(): boolean | undefined;
+    set strike(strike: boolean | undefined);
+    get obfuscated(): boolean | undefined;
+    set obfuscated(obfuscated: boolean | undefined);
+    abstract getDisplayContent(): string;
+    abstract copy(): TextComponent<T>;
+    toJSON(): RawTextComponent<T>;
+    toYSON(): RawTextComponent<T>;
+    toString(): string;
+}
+export default TextComponent;
