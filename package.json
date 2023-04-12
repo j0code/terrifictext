@@ -11,5 +11,17 @@
   "devDependencies": {
     "typescript": "^5.0.4"
   },
-  "type": "module"
+  "type": "module",
+  "types": "./dist/main.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/j0code/terrifictext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/j0code/terrifictext/issues"
+  },
+  "homepage": "https://github.com/j0code/terrifictext#readme"
 }
